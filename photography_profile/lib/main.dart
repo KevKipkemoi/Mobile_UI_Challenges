@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  
+  List tags = ['Travel', 'Photography', 'Lifestyle', 'Fashion', 'Food'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +48,7 @@ class MyHomePage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 28, top: 7),
                 child: CircleAvatar(
                   radius: 35,
-                  backgroundImage: AssetImage('assets/profile.png'),
+                  backgroundImage: AssetImage('assets/profile.jpg'),
                 ),
               ),
               Padding(
@@ -162,6 +165,29 @@ class MyHomePage extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
+          ),
+          Container(
+            height: 44,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: tags.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    border: Border.all(color: Colors.white12),
+                  ),
+                  margin: EdgeInsets.only(right: 13),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 13, bottom: 5, right: 20, left: 20),
+                    child: Text(
+                      tags[index],
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                );
+              }
             ),
           ),
         ],
