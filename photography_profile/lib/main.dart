@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   
   List tags = ['Travel', 'Photography', 'Lifestyle', 'Fashion', 'Food'];
+  List categories = ['Featured', 'Art', 'Music', 'Fashion', 'Studio'];
 
   @override
   Widget build(BuildContext context) {
@@ -175,7 +177,7 @@ class MyHomePage extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 return Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(22),
+                    borderRadius: BorderRadius.circular(33),
                     border: Border.all(color: Colors.white12),
                   ),
                   margin: EdgeInsets.only(right: 13),
@@ -188,6 +190,92 @@ class MyHomePage extends StatelessWidget {
                   ),
                 );
               }
+            ),
+          ),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              margin: EdgeInsets.only(top: 15),
+              decoration: BoxDecoration(
+                color: Color(0xffEFEFEF),
+                borderRadius: BorderRadius.vertical(top: Radius.circular(34)),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 33, right: 25, left: 25),
+                    child: Text(
+                      'Portfolio',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 33),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(right: 25, left: 25),
+                    height: 40,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: categories.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 17, top: 3),
+                          child: index == 1? 
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                categories[index],
+                                style: TextStyle(
+                                  color: Color(0xff434AE8),
+                                  fontSize: 19
+                                ),
+                              ),
+                              CircleAvatar(
+                                radius: 2,
+                                backgroundColor: Color(0xff434AE8),
+                              ),
+                            ],
+                          ):
+                          Text(
+                            categories[index],
+                            style: TextStyle(
+                              color: Colors.grey.withOpacity(0.9),
+                              fontSize: 19
+                            )
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Expanded(
+                    child: Stack(
+                      alignment: Alignment.bottomCenter,
+                      children: <Widget>[
+                        Align(alignment: Alignment.topCenter,
+                          child: Container(
+                            padding: EdgeInsets.only(right: 25, left: 25),
+                            height: 200,
+                            child: StaggeredGridView.countBuilder(
+                              crossAxisCount: 4,
+                              itemCount: 4,
+                              itemBuilder: (BuildContext context, int index) => Container(
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                                  child: Image.asset('assets/img${index + 1}.jpg', fit: BoxFit.cover),
+                                ),
+                              ),
+                              staggeredTileBuilder: (int index) => StaggeredTile.count(2, index.isEven ? 3 : 1),
+                              mainAxisSpacing: 9,
+                              crossAxisSpacing: 8,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
