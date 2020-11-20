@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   
-  List tags = ['Travel', 'Photography', 'Lifestyle', 'Fashion', 'Food'];
-  List categories = ['Featured', 'Art', 'Music', 'Fashion', 'Studio'];
+  final List tags = ['Travel', 'Photography', 'Lifestyle', 'Fashion', 'Food'];
+  final List categories = ['Featured', 'Art', 'Music', 'Fashion', 'Studio'];
 
   @override
   Widget build(BuildContext context) {
