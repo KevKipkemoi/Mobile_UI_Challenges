@@ -271,6 +271,41 @@ class MyHomePage extends StatelessWidget {
                             ),
                           ),
                         ),
+                        Container(
+                          width: double.infinity,
+                          padding: EdgeInsets.only(right: 12, left: 12),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(33))
+                          ),
+                          height: 55,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(Icons.home, color: Color(0xff434BE6)),
+                              Icon(Icons.notifications_active, color: Colors.grey.withOpacity(0.6)),
+                              SizedBox(width: 33),
+                              Icon(Icons.favorite, color: Colors.grey.withOpacity(0.6)),
+                              Icon(Icons.person, color: Colors.grey.withOpacity(0.6)),
+                            ],
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 23,
+                          child: Container(
+                            height: 66,
+                            width: 66,
+                            child: Icon(Icons.add, size: 27, color: Colors.white),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(55)),
+                              gradient: LinearGradient(
+                                colors: [Color(0xff6615C1), Color(0xff484FDE)],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
