@@ -1,3 +1,4 @@
+import 'package:bank_app/screens/TransactionsScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +15,12 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         backgroundColor: Color.fromRGBO(39, 50, 80, 1),
-        body: Text(''),
+        appBar: AppBar(
+          title: Text('TRANSACTIONS'),
+          centerTitle: true,
+          backgroundColor: Colors.pinkAccent,
+        ),
+        body: TransactionsScreen(),
       ),
     );
   }
