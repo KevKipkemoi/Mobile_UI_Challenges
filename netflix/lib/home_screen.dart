@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/content_scroll.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -32,52 +33,60 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         );
       },
-      child: Stack(
-        children: <Widget>[
-          Center(
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black54,
-                    offset: Offset(0, 4),
-                    blurRadius: 10,
-                  ),
-                ]
-              ),
-              child: Center(
-                child: Hero(
-                  tag: movies[index].imageUrl,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image(
-                      image: AssetImage(movies[index].imageUrl),
-                      height: 220,
-                      fit: BoxFit.cover,
+      child: GestureDetector(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            // builder: (_) => MovieScreen(),
+          ),
+        ),
+        child: Stack(
+          children: <Widget>[
+            Center(
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black54,
+                      offset: Offset(0, 4),
+                      blurRadius: 10,
+                    ),
+                  ]
+                ),
+                child: Center(
+                  child: Hero(
+                    tag: movies[index].imageUrl,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image(
+                        image: AssetImage(movies[index].imageUrl),
+                        height: 220,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            left: 30,
-            bottom: 40,
-            child: Container(
-              width: 250,
-              child: Text(
-                movies[index].title.toUpperCase(),
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+            Positioned(
+              left: 30,
+              bottom: 40,
+              child: Container(
+                width: 250,
+                child: Text(
+                  movies[index].title.toUpperCase(),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -161,7 +170,19 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(height: 20),
-          ContentScroll(),
+          ContentScroll(
+            images: myList,
+            title: 'My List',
+            imageHeight: 250,
+            imageWidth: 150,
+          ),
+          SizedBox(height: 10),
+          ContentScroll(
+            images: popular,
+            title: 'Popular',
+            imageHeight: 250,
+            imageWidth: 150,
+          ),
         ],
       ),
     );
