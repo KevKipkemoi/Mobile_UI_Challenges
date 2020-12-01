@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/models/movie_model.dart';
+import 'package:netflix/widgets/content_clipper.dart';
+import 'package:netflix/widgets/content_scroll.dart';
 
 class MovieScreen extends StatefulWidget {
   final Movie movie;
