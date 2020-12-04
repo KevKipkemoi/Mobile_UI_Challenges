@@ -303,6 +303,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 30.0),
+              child: Text(
+                'Upcoming',
+                style: TextStyle(
+                  color: Colors.black.withOpacity(0.7),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 35.0, bottom: 25.0),
+              child: Container(
+                height: 150.0,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[],
+                ),
+              ),
+            ),
           ],
         ),
       ),
