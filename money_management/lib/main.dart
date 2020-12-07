@@ -107,7 +107,13 @@ class _MyHomePageState extends State<MyHomePage> {
                         borderRadius: BorderRadius.circular(100.0),
                         color: Colors.blue[300],
                         child: MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => DashboardPage()
+                              )
+                            );
+                          },
                           padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
                           child: Text(
                             'TOP UP',
