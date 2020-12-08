@@ -50,6 +50,76 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
               ),
             ),
+            Padding(
+              EdgeInsets.symmetric(horizontal: 25.0),
+              child: Container(
+                width: double.infinity,
+                height: 370.0,
+                decoration: BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      offset: Offset(0.0, 0.3),
+                      blurRadius: 15.0,
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Text(
+                                '2800.00',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(height: 15.0),
+                              Text(
+                                'Available Balance',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.show_chart),
+                            onPressed: () {},
+                            color: Colors.white,
+                            iconSize: 30.0,
+
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              EdgeInsets.only(left: 25.0, right: 25.0, top: 30.0),
+              child: Text(
+                'Recent Activity',
+                style: TextStyle(
+                  color: Colors.black.withOpacity(0.7),
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ],
         ),
       ),

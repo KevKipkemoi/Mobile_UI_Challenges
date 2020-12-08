@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:money_management/cards/main_card.dart';
 import 'package:money_management/cards/upcoming_card.dart';
+import 'package:money_management/pages/dashboard.dart';
 import 'package:money_management/widgets/custom_clipper.dart';
 
 void main() {
