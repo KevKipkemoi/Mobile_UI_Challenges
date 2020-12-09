@@ -110,7 +110,7 @@ class _DashboardPageState extends State<DashboardPage> {
               ),
             ),
             Padding(
-              EdgeInsets.only(left: 25.0, right: 25.0, top: 30.0),
+              padding: EdgeInsets.only(left: 25.0, right: 25.0, top: 30.0),
               child: Text(
                 'Recent Activity',
                 style: TextStyle(
@@ -118,6 +118,125 @@ class _DashboardPageState extends State<DashboardPage> {
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                 ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 25.0, right: 25.0, bottom: 10.0),
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5.0),
+                    child: Row(
+                      children: <Widget>[
+                        Material(
+                          borderRadius: BorderRadius.circular(100.0),
+                          color: Colors.purple.withOpacity(0.1),
+                          child: Padding(
+                            padding: EdgeInsets.all(15.0),
+                            child: Text(
+                              'VK',
+                              style: TextStyle(
+                                color: Colors.purple,
+                                fontSize: 24.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 25.0),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                'Load Activity',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold
+                                ),
+                              ),
+                              Text(
+                                'Sent Money',
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.8),
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Text(
+                          '-240.0',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Divider(),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5.0),
+                    child: Row(
+                      children: <Widget>[
+                        Material(
+                          borderRadius: BorderRadius.circular(100.0),
+                          color: Colors.orange.withOpacity(0.1),
+                          child: Padding(
+                            padding: EdgeInsets.all(15.0),
+                            child: Text(
+                              'MO',
+                              style: TextStyle(
+                                color: Colors.purple,
+                                fontSize: 24.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 25.0),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                'Load Activity',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold
+                                ),
+                              ),
+                              Text(
+                                'Receive Money',
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.8),
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Text(
+                          ' 800.0',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
