@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -7,8 +8,40 @@ class DashboardPage extends StatefulWidget {
 
 class _DashboardPageState extends State<DashboardPage> {
   Color primaryColor = Color.fromRGBO(255, 82, 48, 1);
+
   @override
   Widget build(BuildContext context) {
+
+    var data = [
+      ClickPerMonth('Jan', 30, Colors.purple),
+      ClickPerMonth('Feb', 42, Colors.blue),
+      ClickPerMonth('Mar', 54, Colors.purple),
+      ClickPerMonth('Apr', 20, Colors.blue),
+      ClickPerMonth('May', 76, Colors.purple),
+      ClickPerMonth('Jun', 35, Colors.blue),
+    ];
+
+    var series = [
+      new charts.Series(
+        id: 'Clicks',
+        domainFn: (ClickPerMonth clickData, _) => clickData.month,
+        measureFn: (ClickPerMonth clickData, _) => clickData.clicks,
+        colorFn: (ClickPerMonth clickData, _) => clickData.color,
+        data: data,
+      ),
+    ];
+
+    var chart = new charts.BarChart(
+      series,
+      animate: true,
+      animationDuration: Duration(milliseconds: 1500),
+    );
+
+    var chartWidget = Padding(
+      padding: EdgeInsets.all(32.0),
+      child: SizedBox(height: 180.0, child: chart),
+    );
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -51,7 +84,7 @@ class _DashboardPageState extends State<DashboardPage> {
               ),
             ),
             Padding(
-              EdgeInsets.symmetric(horizontal: 25.0),
+              padding: EdgeInsets.symmetric(horizontal: 25.0),
               child: Container(
                 width: double.infinity,
                 height: 370.0,
@@ -100,11 +133,11 @@ class _DashboardPageState extends State<DashboardPage> {
                             onPressed: () {},
                             color: Colors.white,
                             iconSize: 30.0,
-
                           ),
                         ],
                       ),
                     ),
+                    chartWidget,
                   ],
                 ),
               ),
@@ -244,4 +277,21 @@ class _DashboardPageState extends State<DashboardPage> {
       ),
     );
   }
+}
+
+class ClickPerMonth {
+  final String month;
+  final int clicks;
+  final charts.Color color;
+
+  ClickPerMonth(
+    this.month,
+    this.clicks,
+    Color color,
+  ) : this.color = new charts.Color(
+    r: color.red,
+    g: color.green,
+    b: color.blue,
+    a: color.alpha,
+  );
 }
