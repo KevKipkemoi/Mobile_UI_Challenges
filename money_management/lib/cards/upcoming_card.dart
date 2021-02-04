@@ -18,7 +18,7 @@ class UpcomingCard extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
+          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 25.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -30,7 +30,7 @@ class UpcomingCard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 30.0),
+              SizedBox(height: 20.0),
               Text(
                 '$value',
                 style: TextStyle(
