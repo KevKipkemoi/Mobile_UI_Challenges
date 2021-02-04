@@ -1,4 +1,4 @@
-import 'package:bank_app/screens/TransactionsScreen.dart';
+import './screens/TransactionsScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
